@@ -28,12 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            textBox1 = new TextBox();
+            label1 = new Label();
+            ConvertButton = new Button();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            SuspendLayout();
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(32, 46);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Size = new Size(730, 386);
+            textBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(22, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(109, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Paste old Database:";
+            // 
+            // ConvertButton
+            // 
+            ConvertButton.Location = new Point(777, 189);
+            ConvertButton.Name = "ConvertButton";
+            ConvertButton.Size = new Size(134, 45);
+            ConvertButton.TabIndex = 2;
+            ConvertButton.Text = "CONVERT\r\n==>";
+            ConvertButton.UseVisualStyleBackColor = true;
+            ConvertButton.Click += button1_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(917, 46);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.ScrollBars = ScrollBars.Vertical;
+            textBox2.Size = new Size(730, 386);
+            textBox2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(903, 18);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 15);
+            label2.TabIndex = 4;
+            label2.Text = "New Database:";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1666, 457);
+            Controls.Add(label2);
+            Controls.Add(textBox2);
+            Controls.Add(ConvertButton);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Name = "Form1";
+            Text = "Database Fixer";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox textBox1;
+        private Label label1;
+        private Button ConvertButton;
+        private TextBox textBox2;
+        private Label label2;
     }
 }
