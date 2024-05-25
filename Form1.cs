@@ -18,16 +18,22 @@ namespace DatabaseFixer
         {
             string _databaseQuery = textBox1.Text;
 
-            _databaseQuery = _databaseQuery.Replace("or replace", "", true, CultureInfo.InvariantCulture);
-            _databaseQuery = _databaseQuery.Replace("||", "+", true, CultureInfo.InvariantCulture);
-            _databaseQuery = _databaseQuery.Replace("XTIME", "gfostest", true, CultureInfo.InvariantCulture);
+            if (ReplaceCheckBox.Checked)
+                _databaseQuery = _databaseQuery.Replace("or replace", "", true, CultureInfo.InvariantCulture);
+
+            if (ToPlusCheckBox.Checked)
+                _databaseQuery = _databaseQuery.Replace("||", "+", true, CultureInfo.InvariantCulture);
+
+            if (XTimeCheckBox.Checked)
+                _databaseQuery = _databaseQuery.Replace("XTIME", "gfostest", true, CultureInfo.InvariantCulture);
+
 
             //Deletion of Group By
-            string[] _queryLines = _databaseQuery.Split(new string[] { Environment.NewLine}, StringSplitOptions.None);
+            string[] _queryLines = _databaseQuery.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             _databaseQuery = "";
             for (int i = 0; i < _queryLines.Length; i++)
             {
-                if (_queryLines[i].ToLower().Contains("group by") || _queryLines[i].ToLower().Contains("order by"))
+                if ((_queryLines[i].ToLower().Contains("group by") && GroupByCheckBox.Checked) || (_queryLines[i].ToLower().Contains("order by") && OrderByCheckBox.Checked))
                     _queryLines[i] = "";
 
                 Debug.WriteLine(i);
