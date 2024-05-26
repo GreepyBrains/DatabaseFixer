@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace DatabaseFixer
 {
@@ -12,7 +13,7 @@ namespace DatabaseFixer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Debug.WriteLine(">cls");
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,7 +37,16 @@ namespace DatabaseFixer
                 if ((_queryLines[i].ToLower().Contains("group by") && GroupByCheckBox.Checked) || (_queryLines[i].ToLower().Contains("order by") && OrderByCheckBox.Checked))
                     _queryLines[i] = "";
 
-                Debug.WriteLine(i);
+                if (ToDateRegexCheckBox.Checked)
+                {
+                    if (_queryLines[i].ToLower().Contains("to_date"))
+                    {
+                        string _pattern = @"(?i)TO_DATE\(.*?[)]";
+                        Regex _regex = new Regex(_pattern);
+                        _queryLines[i] = _regex.Replace(_queryLines[i], "CAST('01.01.1600' AS DATETIME)");
+                    }
+                }
+
                 _databaseQuery += _queryLines[i];
                 _databaseQuery += Environment.NewLine;
             }

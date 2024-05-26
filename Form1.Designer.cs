@@ -39,6 +39,8 @@
             GroupByCheckBox = new CheckBox();
             OrderByCheckBox = new CheckBox();
             label3 = new Label();
+            ToDateRegexCheckBox = new CheckBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -159,11 +161,36 @@
             label3.Text = "Experimental:\r\n(Das hier löscht die ganze Zeile)";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
+            // ToDateRegexCheckBox
+            // 
+            ToDateRegexCheckBox.AutoSize = true;
+            ToDateRegexCheckBox.BackColor = SystemColors.Control;
+            ToDateRegexCheckBox.ForeColor = Color.Red;
+            ToDateRegexCheckBox.Location = new Point(780, 390);
+            ToDateRegexCheckBox.Name = "ToDateRegexCheckBox";
+            ToDateRegexCheckBox.Size = new Size(110, 19);
+            ToDateRegexCheckBox.TabIndex = 11;
+            ToDateRegexCheckBox.Text = "Regex: TO_DATE";
+            ToDateRegexCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(768, 317);
+            label4.Name = "label4";
+            label4.Size = new Size(162, 60);
+            label4.TabIndex = 12;
+            label4.Text = "REGEX:\r\n(Wird nicht funktionieren,\r\nbrauche mehr Datensätze für \r\nnen guten regex CAST)";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1758, 457);
+            ClientSize = new Size(1689, 457);
+            Controls.Add(label4);
+            Controls.Add(ToDateRegexCheckBox);
             Controls.Add(label3);
             Controls.Add(OrderByCheckBox);
             Controls.Add(GroupByCheckBox);
@@ -195,5 +222,7 @@
         private CheckBox GroupByCheckBox;
         private CheckBox OrderByCheckBox;
         private Label label3;
+        private CheckBox ToDateRegexCheckBox;
+        private Label label4;
     }
 }
