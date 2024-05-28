@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DatabaseFixer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93371cbf1ec2a576e5c24f277b83112fa7e251b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86cb8993bb3ceccc33053a4bacdc8fd81774e2c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DatabaseFixer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DatabaseFixer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

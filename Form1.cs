@@ -51,6 +51,23 @@ namespace DatabaseFixer
                 _databaseQuery += Environment.NewLine;
             }
             textBox2.Text = _databaseQuery;
+
+            if (AutoClipboardCheckBox.Checked)
+                CopyToClipBoard(_databaseQuery);
+        }
+
+        async void CopyToClipBoard(string _toCopy)
+        {
+            await Task.Delay(500);
+            Clipboard.SetText(_toCopy);
+        }
+
+        private void OldTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!AutoConvertCheckBox.Checked)
+                return;
+
+            button1_Click(null, null);
         }
 
         private void copyButton_Click(object sender, EventArgs e)

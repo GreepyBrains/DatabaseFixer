@@ -42,6 +42,8 @@
             ToDateRegexCheckBox = new CheckBox();
             label4 = new Label();
             copyButton = new Button();
+            AutoConvertCheckBox = new CheckBox();
+            AutoClipboardCheckBox = new CheckBox();
             SuspendLayout();
             // 
             // textBox1
@@ -52,6 +54,7 @@
             textBox1.ScrollBars = ScrollBars.Vertical;
             textBox1.Size = new Size(730, 386);
             textBox1.TabIndex = 0;
+            textBox1.TextChanged += OldTextbox_TextChanged;
             // 
             // label1
             // 
@@ -188,7 +191,7 @@
             // copyButton
             // 
             copyButton.Font = new Font("Segoe UI", 20F);
-            copyButton.Location = new Point(1063, 438);
+            copyButton.Location = new Point(1078, 438);
             copyButton.Name = "copyButton";
             copyButton.Size = new Size(599, 46);
             copyButton.TabIndex = 13;
@@ -196,11 +199,39 @@
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click;
             // 
+            // AutoConvertCheckBox
+            // 
+            AutoConvertCheckBox.AutoSize = true;
+            AutoConvertCheckBox.BackColor = SystemColors.Control;
+            AutoConvertCheckBox.Checked = true;
+            AutoConvertCheckBox.CheckState = CheckState.Checked;
+            AutoConvertCheckBox.ForeColor = Color.Black;
+            AutoConvertCheckBox.Location = new Point(32, 456);
+            AutoConvertCheckBox.Name = "AutoConvertCheckBox";
+            AutoConvertCheckBox.Size = new Size(97, 19);
+            AutoConvertCheckBox.TabIndex = 14;
+            AutoConvertCheckBox.Text = "Auto Convert";
+            AutoConvertCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // AutoClipboardCheckBox
+            // 
+            AutoClipboardCheckBox.AutoSize = true;
+            AutoClipboardCheckBox.BackColor = SystemColors.Control;
+            AutoClipboardCheckBox.ForeColor = Color.Black;
+            AutoClipboardCheckBox.Location = new Point(965, 456);
+            AutoClipboardCheckBox.Name = "AutoClipboardCheckBox";
+            AutoClipboardCheckBox.Size = new Size(107, 19);
+            AutoClipboardCheckBox.TabIndex = 15;
+            AutoClipboardCheckBox.Text = "Auto Clipboard";
+            AutoClipboardCheckBox.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1689, 487);
+            Controls.Add(AutoClipboardCheckBox);
+            Controls.Add(AutoConvertCheckBox);
             Controls.Add(copyButton);
             Controls.Add(label4);
             Controls.Add(ToDateRegexCheckBox);
@@ -238,5 +269,7 @@
         private CheckBox ToDateRegexCheckBox;
         private Label label4;
         private Button copyButton;
+        private CheckBox AutoConvertCheckBox;
+        private CheckBox AutoClipboardCheckBox;
     }
 }
