@@ -13,8 +13,8 @@ namespace DatabaseFixer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Debug.WriteLine(">cls");
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string _databaseQuery = textBox1.Text;
@@ -51,6 +51,11 @@ namespace DatabaseFixer
                 _databaseQuery += Environment.NewLine;
             }
             textBox2.Text = _databaseQuery;
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox2.Text);
         }
     }
 }

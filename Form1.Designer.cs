@@ -41,6 +41,7 @@
             label3 = new Label();
             ToDateRegexCheckBox = new CheckBox();
             label4 = new Label();
+            copyButton = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -184,11 +185,23 @@
             label4.Text = "REGEX:\r\n(Wird nicht funktionieren,\r\nbrauche mehr Datensätze für \r\nnen guten regex CAST)";
             label4.TextAlign = ContentAlignment.TopCenter;
             // 
+            // copyButton
+            // 
+            copyButton.Font = new Font("Segoe UI", 20F);
+            copyButton.Location = new Point(1063, 438);
+            copyButton.Name = "copyButton";
+            copyButton.Size = new Size(599, 46);
+            copyButton.TabIndex = 13;
+            copyButton.Text = "Copy to Clipboard";
+            copyButton.UseVisualStyleBackColor = true;
+            copyButton.Click += copyButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1689, 457);
+            ClientSize = new Size(1689, 487);
+            Controls.Add(copyButton);
             Controls.Add(label4);
             Controls.Add(ToDateRegexCheckBox);
             Controls.Add(label3);
@@ -224,5 +237,6 @@
         private Label label3;
         private CheckBox ToDateRegexCheckBox;
         private Label label4;
+        private Button copyButton;
     }
 }
